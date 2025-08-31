@@ -1,8 +1,5 @@
 import { useSelector } from "react-redux";
-import { formatTemp } from "../helper/FormatTemp";
 import { formatTime } from "../helper/formathTime";
-import { formatWindSpeed } from "../helper/formatWindSpeed";
-import { formatDistance } from "../helper/formatDistance";
 import { getWeatherIcon } from "../helper/getWeatherIcon";
 import { WeatherDetailsCard } from "./WeatherDetailsCard";
 import { WeatherCards } from "./WeatherCards";
@@ -23,7 +20,7 @@ export const MainWeatherCard = () => {
                     <div className="flex items-center justify-between xs:justify-center xs:flex-col text-white mb-6 md:mb-8 gap-2">
                         <p className="heading-5 font-semibold flex items-center sm:gap-2">
                             <span className="text-base sm:text-2xl">📍</span>
-                            {city}, <span className="hidden sm:inline" >{stateProvince}, </span>
+                            {city}, <span className="hidden sm:inline" >{stateProvince}</span>
                             {country}
                         </p>
                         <span className='para text-white/70'>
@@ -44,7 +41,7 @@ export const MainWeatherCard = () => {
                             <div className="text-center flex-centered flex-col gap-1 sm:gap-3">
                                 {/* Temperature with enhanced styling */}
                                 <div className="heading-2 text-white bg-gradient-to-r from-white to-white/80 bg-clip-text">
-                                    {formatTemp(currentWeather?.main?.temp)}°C
+                                    {Math.round(currentWeather?.main?.temp - 273.15)}°C
                                 </div>
                                 {/* Description */}
                                 <div className="para text-white/90 capitalize font-medium">
@@ -56,7 +53,7 @@ export const MainWeatherCard = () => {
                         <div className="text-white/80 flex flex-col gap-1 xs:gap-2 sm:gap-5 items-center my-auto">
                             {/* Feels like */}
                             <div className="para w-full bg-white/10 rounded-xl p-1 sm:p-2 md:p-6 backdrop-blur-md">
-                                Feels like {formatTemp(currentWeather?.main?.feels_like)}°C
+                                Feels like {Math.round(currentWeather?.main?.feels_like - 273.15)}°C
                             </div>
                             
                             {/* Sunrise/Sunset */}
@@ -87,12 +84,12 @@ export const MainWeatherCard = () => {
                             icon={"💧"}
                         />
                         <WeatherDetailsCard
-                            value={formatWindSpeed(currentWeather?.wind?.speed) + " km/h"}
+                            value={Math.round(currentWeather?.wind?.speed * 3.6) + " km/h"}
                             label={"Wind Speed"}
                             icon={"🍃"}
                         />
                         <WeatherDetailsCard
-                            value={formatDistance(currentWeather?.visibility) + " km"}
+                            value={ Math.round(currentWeather?.visibility / 1000) + " km"}
                             label={"Visibility"} 
                             icon={"👁️"}
                         />
