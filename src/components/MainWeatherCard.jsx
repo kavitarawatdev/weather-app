@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { formatTime } from "../helper/formathTime";
+import { formatTime } from "../helper/formatTime";
 import { getWeatherIcon } from "../helper/getWeatherIcon";
 import { WeatherDetailsCard } from "./WeatherDetailsCard";
 import { WeatherCards } from "./WeatherCards";

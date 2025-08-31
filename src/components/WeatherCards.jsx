@@ -1,5 +1,5 @@
-import { formatDate } from "../helper/FormatDate";
-import { formatTime } from "../helper/formathTime";
+import { formatDate } from "../helper/formatDate";
+import { formatTime } from "../helper/formatTime";
 import { getWeatherIcon } from "../helper/getWeatherIcon";
 
 export const WeatherCards = ({ item }) => {
