@@ -1,0 +1,89 @@
+@import "tailwindcss";
+@theme {
+   --breakpoint-xs: 30rem; /* 480px */
+}
+
+@layer components {
+  .section {
+    @apply py-4 md:py-8 px-4 w-full;
+  }
+  .container {
+    @apply min-w-full md:min-w-2xl lg:min-w-4xl xl:min-w-6xl 2xl:max-w-7xl mx-auto;
+  }
+  .flex-centered {
+    @apply flex items-center justify-center;
+  }
+  .card{
+    @apply bg-white/10 backdrop-blur-xl rounded-2xl p-4 md:p-6 text-center border border-white/20 shadow-2xl hover:bg-white/15 hover:border-white/30 transition-all duration-300;
+  }
+
+  .heading-1{
+    @apply text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold;
+  }
+  .heading-2{
+    @apply text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold;
+  }
+  .heading-3{
+    @apply text-2xl md:text-4xl lg:text-5xl font-bold;
+  }
+  .heading-4{
+    @apply text-xl md:text-3xl lg:text-4xl font-bold;
+  }
+  .heading-5{
+    @apply text-base xs:text-xl sm:text-2xl lg:text-3xl font-bold;
+  }
+  .heading-6{
+    @apply text-xs xs:text-sm sm:text-base md:text-xl lg:text-2xl font-bold;
+  }
+  .para{
+    @apply text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl;
+  }
+  .para-md{
+    @apply text-sm sm:text-base md:text-lg lg:text-xl;
+  }
+  .para-sm{
+    @apply text-xs sm:text-sm md:text-base lg:text-lg;
+  }
+  .para-xs{
+    @apply text-xs md:text-sm lg:text-base;
+  }
+
+  .icon{
+    @apply p-2 md:p-3 bg-white/20 rounded-full hover:scale-110 transition-all duration-300;
+   }
+   .icon-xl{
+    @apply text-5xl xs:text-6xl md:text-7xl lg:text-8xl;
+   }
+  .icon-md{
+    @apply text-4xl md:text-5xl;
+  }
+  .icon-sm{
+    @apply text-xl sm:text-2xl md:text-3xl;
+  }
+
+  .author{
+    @apply text-xl md:text-2xl font-medium;
+  }
+  .common-input-field{
+    @apply py-2 md:py-3 px-4 md:px-6 pr-12 md:pr-14 outline-0 rounded-xl;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); }
+  50% { box-shadow: 0 0 40px rgba(255, 255, 255, 0.3); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
