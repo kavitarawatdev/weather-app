@@ -20,7 +20,7 @@ export const MainWeatherCard = () => {
                     <div className="flex items-center justify-between xs:justify-center xs:flex-col text-white mb-6 md:mb-8 gap-2">
                         <p className="heading-5 font-semibold flex items-center sm:gap-2">
                             <span className="text-base sm:text-2xl">📍</span>
-                            {city}, <span className="hidden sm:inline" >{stateProvince}</span>
+                            {city}, <span className="hidden sm:inline" >{stateProvince + ","}</span>
                             {country}
                         </p>
                         <span className='para text-white/70'>
